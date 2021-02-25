@@ -41,12 +41,12 @@ public class CoreCompetency {
         if (this == o) return true;
         if (!(o instanceof CoreCompetency)) return false;
         CoreCompetency that = (CoreCompetency) o;
-        return id == that.id;
+        return getId() == that.getId() && Objects.equals(getValue(), that.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId(), getValue());
     }
 
     // TODO: Use the "Generate" tool to add a getter and setter for the 'value' field but
