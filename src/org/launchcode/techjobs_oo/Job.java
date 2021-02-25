@@ -94,4 +94,53 @@ public class Job {
     public int hashCode() {
         return Objects.hash(getId());
     }
-}
+
+    @Override
+    public String toString() {
+        String idString = "ID: " + this.getId();
+        String nameString = "Name: " + this.getName();
+        String employerString = "Employer: " + this.getEmployer().getValue();
+        String locationString = "Location: " + this.getLocation().getValue();
+        String positionString = "Position Type: " + this.getPositionType().getValue();
+        String coreCompetencyString = "Core Competency: " + this.getCoreCompetency().getValue();
+
+        if (this.getId() < 0) {
+            idString = "ID: Data not available";
+        }
+
+        if (this.getName() == null) {
+            nameString = "Name: Data not available";
+        }
+
+        if (this.getEmployer().getValue() == null) {
+            employerString = "Employer: Data not available";
+        }
+
+        if (this.getLocation().getValue() == null) {
+            locationString = "Location: Data not available";
+        }
+
+        if (this.getPositionType().getValue() == null) {
+            positionString = "Position Type: Data not available";
+        }
+
+        if (this.getCoreCompetency().getValue() == null) {
+            coreCompetencyString = "Core Competency: Data not available";
+        }
+
+//        if (this.getName() == " " && this.getEmployer().getValue() == null
+//                && this.getEmployer().getValue() == null && this.getPositionType().getValue() == null
+//                && this.getCoreCompetency().getValue() == null) {
+//            return "OOPS! This job does not seem to exist.";
+//        } else {
+
+            return "\n" + idString + "\n" +
+                    nameString + "\n" +
+                    employerString + "\n" +
+                    locationString + "\n" +
+                    positionString + "\n" +
+                    coreCompetencyString + "\n";
+        }
+    }
+
+
