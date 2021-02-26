@@ -61,7 +61,7 @@ public class JobTest {
         CoreCompetency persistence = new CoreCompetency();
         CoreCompetency statisticalAnalysis = new CoreCompetency();
         testJobOne = new Job("Product tester", acme, desert, qualityControl, persistence);
-        testJobTwo = new Job("Junior Data Analyst", lockerdome, saintLouis, dataScientist, statisticalAnalysis);
+        testJobTwo = new Job("Product tester", acme, desert, qualityControl, persistence);
 
         assertFalse(testJobOne.equals(testJobTwo));
     }
