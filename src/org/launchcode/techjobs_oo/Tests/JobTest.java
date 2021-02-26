@@ -26,6 +26,7 @@ public class JobTest {
         CoreCompetency statisticalAnalysis = new CoreCompetency();
         testJobOne = new Job("Product tester", acme, desert, qualityControl, persistence);
         testJobTwo = new Job("Junior Data Analyst", lockerdome, saintLouis, dataScientist, statisticalAnalysis);
+
         assertFalse(testJobOne.getId() == testJobTwo.getId());
     }
 
@@ -33,6 +34,8 @@ public class JobTest {
     public void testJobConstructorSetsAllFields() {
         Job testJobThree = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType(
                 "Quality control"), new CoreCompetency("Persistence"));
+
+        System.out.println(testJobThree.getId());
        //assertTrue(testJobThree.getName() instanceof Job); - Do I need to check the class of testJobThree.getName()?
         assertTrue(testJobThree.getEmployer() instanceof Employer);
         assertTrue(testJobThree.getLocation() instanceof Location);
@@ -91,6 +94,25 @@ public class JobTest {
 
         //Why is this expecting 4?? Aren't the variables all local to the tests?
         assertEquals("\nID: 4\n" +
+                "Name: Test Job\n" +
+                "Employer: Data not available\n" +
+                "Location: Data not available\n" +
+                "Position Type: Data not available\n" + "" +
+                "Core Competency: Data not available\n", testJobOne.toString());
+
+    }
+
+    @Test
+    public void jobClassToStringMethodWorksWithEmptyStringsInConstructors() {
+        Job testJobOne;
+        Employer acme = new Employer("");
+        Location desert = new Location("");
+        PositionType qualityControl = new PositionType("");
+        CoreCompetency persistence = new CoreCompetency("");
+        testJobOne = new Job("Test Job", acme, desert, qualityControl, persistence);
+
+        //Why is this expecting 4?? Aren't the variables all local to the tests?
+        assertEquals("\nID: 6\n" +
                 "Name: Test Job\n" +
                 "Employer: Data not available\n" +
                 "Location: Data not available\n" +

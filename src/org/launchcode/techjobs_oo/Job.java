@@ -128,18 +128,38 @@ public class Job {
             coreCompetencyString = "Core Competency: Data not available";
         }
 
+        if (this.getName() == "") {
+            nameString = "Name: Data not available";
+        }
+
+        if (this.getEmployer().getValue() == "") {
+            employerString = "Employer: Data not available";
+        }
+
+        if (this.getLocation().getValue() == "") {
+            locationString = "Location: Data not available";
+        }
+
+        if (this.getPositionType().getValue() == "") {
+            positionString = "Position Type: Data not available";
+        }
+
+        if (this.getCoreCompetency().getValue() == "") {
+            coreCompetencyString = "Core Competency: Data not available";
+        }
+
 //        if (this.getName() == " " && this.getEmployer().getValue() == null
 //                && this.getEmployer().getValue() == null && this.getPositionType().getValue() == null
 //                && this.getCoreCompetency().getValue() == null) {
 //            return "OOPS! This job does not seem to exist.";
 //        } else {
 
-            return "\n" + idString + "\n" +
+            return ("\n" + idString + "\n" +
                     nameString + "\n" +
                     employerString + "\n" +
                     locationString + "\n" +
                     positionString + "\n" +
-                    coreCompetencyString + "\n";
+                    coreCompetencyString + "\n");
         }
     }
 
