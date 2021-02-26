@@ -9,18 +9,5 @@ public class Location extends JobField {
         super(value);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof Location)) return false;
-//        Location location = (Location) o;
-//        return getId() == location.getId();
-//    }
-
 
 }
